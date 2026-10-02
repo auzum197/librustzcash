@@ -19,7 +19,8 @@ pub enum SetError {
         /// The encoding error.
         error: FormatError,
     },
-    /// A line uses a different HRP from the first line.
+    /// A line is for a different network from the first line. Lines of the two classes
+    /// can share a set.
     MixedNetworks {
         /// The line number.
         line: usize,
