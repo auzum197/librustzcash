@@ -1,0 +1,46 @@
+[package]
+name = "zcash_disclosure"
+description = "Shielded note disclosures for Zcash: encoding, production and verification"
+version = "0.0.0"
+authors = ["Dorian <dorianvp@zingolabs.org>"]
+homepage = "https://github.com/zcash/librustzcash"
+repository.workspace = true
+readme = "README.md"
+license.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+categories.workspace = true
+
+[package.metadata.docs.rs]
+all-features = true
+
+[dependencies]
+bech32.workspace = true
+blake2b_simd.workspace = true
+bls12_381.workspace = true
+chacha20poly1305 = { version = "0.10", default-features = false }
+ff.workspace = true
+groth16.workspace = true
+group.workspace = true
+incrementalmerkletree.workspace = true
+jubjub.workspace = true
+orchard.workspace = true
+pasta_curves.workspace = true
+rand_core.workspace = true
+redjubjub.workspace = true
+sapling = { workspace = true, features = ["circuit"] }
+zcash_encoding = { workspace = true, features = ["std"] }
+zcash_note_encryption.workspace = true
+zcash_primitives.workspace = true
+zcash_protocol.workspace = true
+zcash_spec.workspace = true
+zip32.workspace = true
+
+[dev-dependencies]
+orchard = { workspace = true, features = ["circuit", "test-dependencies"] }
+rand_chacha.workspace = true
+sapling = { workspace = true, features = ["circuit", "test-dependencies"] }
+zcash_proofs = { workspace = true, features = ["bundled-prover"] }
+
+[lints]
+workspace = true
